@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "0a1bbf9d-65e4-41bd-a5b9-32e8a472b7cb",
+		"name": "flask-rest-api-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/clients",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0bd106ac-bca2-4d28-86f2-94684ef603d9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Name goes here\",\n\t\"observation\":\"Some observation goes here\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/clients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/clients",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/clients/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ola mundo_DDDDDDD\",\n    \"observation\": \"Esse cara é ddDDDDahora!\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/clients/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/clients/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>/contacts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"email\",\n  \"value\": \"email@email.com\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/clients/1/contacts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>/contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/clients/1/contacts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>/contacts/<int:contact_id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/clients/1/contacts/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"1",
+						"contacts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>/contacts/<int:contact_id>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"email\",\n  \"value\": \"emadddd\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/clients/1/contacts/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"1",
+						"contacts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/clients/<int:id>/contacts/<int:contact_id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/clients/1/contacts/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"clients",
+						"1",
+						"contacts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4433f454-63d5-4da1-921e-a229cab5ca8f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0b1ad93b-a305-46a8-91f0-c29837cf348e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b9b93da2-d9b8-4194-8f78-555b10b5b0b4",
+			"key": "url",
+			"value": "localhost",
+			"type": "string",
+			"description": ""
+		}
+	]
+}
