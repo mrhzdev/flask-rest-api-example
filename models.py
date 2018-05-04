@@ -88,11 +88,12 @@ class Contact(db.Model):
       return db.session.query(cls).filter_by(**kwargs).all( )
     except:
       return None
-      
-class ContactSchema(ma.ModelSchema):
-  class Meta:
-    model = Contact
 
 class ClientSchema(ma.ModelSchema):
   class Meta:
-    model = Client
+    model = Client      
+
+class ContactSchema(ma.ModelSchema):
+  class Meta:
+    model = Contact
+    

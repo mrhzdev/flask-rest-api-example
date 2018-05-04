@@ -23,7 +23,7 @@ def clients_create( ):
   if not client.add( ) :
     return jsonify({'message' : 'Something is going wrong'}), 500
 
-  return jsonify( { 'client' : models.ClientSchema( ).dump(client).data } ), 200
+  return jsonify( { 'client' : models.ClientSchema( ).dump(client).data } ), 201
   ## end of clients_create method
 
 
@@ -107,7 +107,7 @@ def contacts_create(id):
   if not contact.add( ) :
     return jsonify({'message' : 'Something is going wrong'}), 500
 
-  return jsonify( { 'contact' : models.ContactSchema( ).dump(contact).data } ), 200
+  return jsonify( { 'contact' : models.ContactSchema( ).dump(contact).data } ), 201
   ## end of contacts_create method
 
 
@@ -172,5 +172,6 @@ static_bp = Blueprint('static', __name__)
 
 @static_bp.route('/' )
 def index():
-  year = datetime.date.today().year
+  year = datetime.date.today()
   return render_template("index.html",date_now=year)
+  ## end of index method
